@@ -1,0 +1,13 @@
+.sidebar{
+    border: solid black 1px;
+    height: 200px;
+    width: 150px;
+}
+
+.footer{
+    border: solid black 1px;
+    
+    position: fixed;
+    bottom: 0px;
+    
+}
