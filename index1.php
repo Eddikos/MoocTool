@@ -1,14 +1,25 @@
-<?php require("library/twitteroauth.php")?>
 <?php
-    $consumer = "gVAmlT857Q9zFEimYRf7POd79";
-    $consumersecret = "7DAZmzJjfFywI5VV9pVlfz3LBjpzTq9Rb9efN4xGRchy7NvA74";
-    $accesstoken = "547829837-aXcGOVVMWVL449IHYwQE6LuK4Psbek2MDYPKcg1h";
-    $accesstokensecret = "4AB5ttMXUbX7XFRMX9NwqFajWPeWxnnGkQOBLTX26eYVr
-";
+
     
-    $twitter = new TwitterOAuth($consumer, $consumersecret, $accesstoken, $accesstokensecret);
     
-    $tweets = $twitter->get('https://api.twitter.com/1.1/search/tweets.json?q=FLDigital&result_type=recent&count=10');
+    $consumerKey = "gVAmlT857Q9zFEimYRf7POd79";
+    $consumerSecret = "7DAZmzJjfFywI5VV9pVlfz3LBjpzTq9Rb9efN4xGRchy7NvA74";
+    $oAuthToken = "547829837-aXcGOVVMWVL449IHYwQE6LuK4Psbek2MDYPKcg1h";
+    $oAuthTokenSecret = "4AB5ttMXUbX7XFRMX9NwqFajWPeWxnnGkQOBLTX26eYVr";
+    
+    include("library/twitteroauth.php");
+    
+    $tweet = new TwitterOAuth($consumerKey, $consumerSecret, $oAuthToken, $oAuthTokenSecret);
+    
+    /*if (isset($_GET['msg'])){
+       $tweetmsg = $_GET['msg'];
+        $tweet->post('statuses/update', array('status' => $tweetmsg));
+        echo "Your messgae has been sent to twitter api";
+    } else {
+        echo "your message wasn;t send to twitter api";
+    }*/
+    
+    //$tweets = $tweet->get('https://api.twitter.com/1.1/geo/search.json?query=toronto');
 
 ?>
 <!DOCTYPE HTML>
@@ -17,7 +28,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Highmaps Example</title>
 
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="http://code.highcharts.com/maps/highmaps.js"></script>y
+
+
+
         <style type="text/css">
             #container {
                 height: 500px; 
@@ -277,19 +291,36 @@
                 });
             });
         </script>
+
     </head>
     <body>
-        <script src="http://code.highcharts.com/maps/highmaps.js"></script>
+       <!-- <script src="http://code.highcharts.com/maps/highmaps.js"></script>
         <script src="http://code.highcharts.com/maps/modules/exporting.js"></script>
         <script src="http://code.highcharts.com/mapdata/custom/world.js"></script>
 
 
         <div id="container"></div>
 
-        <form action="" method="post">
+        -->
+        <form action="index1.php" method="post">
             <label>Search: <input type="text" name="keyboard"/></label>
         </form>
         
-        <?php print_r($tweets); ?>
+        <?php
+        
+            $tweets = $tweet->get('https://api.twitter.com/1.1/search/tweets.json?q=FLdigital&lang=en&result_type=recent&count=30');
+                foreach($tweets as $tweet){
+                    foreach($tweet as $t){
+                        echo '<img src="'.$t->user->profile_image_url.'" />  '.$t->text.' '.(float)$t->coordinates.'<br/>';
+                        echo '<br/>';
+                        print_r($t->coordinates);
+                        echo '<br/><br/>';
+                    }
+                }
+        ?>
+        
+        
+        <br/><br/>
+        
     </body>
 </html>
