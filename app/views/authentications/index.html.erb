@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>Connect Account</h1>
+  <p class="lead">Connect your account to other services</p>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Available connections
+      </div>
+
+      <table class="table">
+        <% authentication = @authentications.select {|authentication| authentication.provider == "twitter"}.first %>
+        <tr>
+          <td>
+            <span class="btn-pad">Twitter</span>
+            <% if authentication %>
+              <%= link_to "Find friends", authentication, class: "btn btn-primary btn-sm" %>
+            <% end %>
+          </td>
+          <td class="text-right">
+            <% if authentication %>
+              <span class="btn-pad">Connected</span>
+              <%= link_to "Disconnect", authentication, :method => :delete, :class => "btn btn-danger btn-sm" %>
+            <% else %>
+              <%= link_to "Connect", "/auth/twitter", class: "btn btn-primary" %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

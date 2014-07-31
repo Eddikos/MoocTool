@@ -1,0 +1,128 @@
+// Base bootstrap theme
+@import "twitter/bootstrap";
+
+
+// Modify Bootstrap variables at will:
+@navbar-height: 65px;
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700);
+
+@font-family-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-size-base:          16px;
+
+@border-radius-base:        2px;
+@border-radius-large:       2px;
+
+body {
+  /* Make room for fixed navbar */
+  padding-top: @navbar-height + 1px;
+}
+
+.dark {
+  color: #d1d7dc;
+
+  a {
+    color: #d1d7dc;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+  }
+
+  .nav > li > a:hover {
+    background: #333;
+  }
+}
+
+
+/* HERO BOXES */
+.hero {
+  z-index: 10;
+  // margin-top: 62px;
+  // margin-bottom: -62px;
+  padding: 40px 0 45px;
+  margin-bottom: 30px;
+
+  background: #eee;
+  border-bottom: 1px solid #ececec;
+
+  &.after_hero {
+    margin-bottom: 0;
+    margin-top: 0;
+    border-bottom: 0;
+  }
+
+  &.smaller {
+    padding: 30px 0 25px;
+  }
+
+  &.gray {
+    .dark;
+    background: #3c4043;
+  }
+
+  &.nav {
+    padding: 0;
+    border-bottom: 1px solid #dedede;
+  }
+
+  &.hero_success {
+/*    background: lighten(@brand-success, 20%);*/
+  }
+
+  &.compact-title {
+    background: #f5f5f5;
+    position: fixed;
+    top: -6px;
+    z-index: 1031;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #dedede;
+    transition: visibility 1s linear;
+//    border-top: 1px solid #222;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .2s, opacity .2s linear;
+
+    &.affix {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity .2s linear;
+    }
+
+    .left-pad {
+      margin-left: 31px;
+    }
+
+    h4 {
+      font-weight: 500;
+    }
+  }
+}
+
+#error_explanation {
+  .alert;
+  .alert-danger;
+
+  h2 {
+    margin-top: 0px;
+    font-size: 20px;
+  }
+}
+
+.btn-login-with-twitter {
+  background: #55acee;
+  color: #fff;
+
+  &:hover, &:active {
+    color: #fff;
+  }
+}
+
+
+// Page specific styles
+@import "home.css";
