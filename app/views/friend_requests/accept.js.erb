@@ -1,0 +1,4 @@
+$('#friend-status_<%= @request.from.id %>').replaceWith('<%=j render partial: "users/friend_status", locals: { user: @request.from } %>');
+$('#friend-request-row_<%= @request.from.id %>').removeClass("warning").addClass("success").fadeOut(function(){
+  $('#dropdown-friend-requests').trigger('show.bs.dropdown');
+});

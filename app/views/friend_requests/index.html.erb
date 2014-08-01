@@ -1,0 +1,19 @@
+<% if @friend_requests.empty? %>
+<p class="text-center text-muted" style="padding-top: 10px; padding-left: 10px; padding-right: 10px;">You have no friend requests to display.</small></p>
+<% else %>
+<table class="table" style="margin-bottom: 0; margin-top: -1px;" class="friend-requests">
+  <tr>
+    <th>Latest friend requests</th>
+    <th class="text-right" style="font-weight: normal;"><%= link_to "See all", friend_requests_path %></th>
+  </tr>
+  <% @friend_requests.each do |request| %>
+    <tr id="friend-request-row_<%= request.from.id %>" class="<%= request.viewed? ? "" : "warning" %>">
+      <td><span class="btn-pad"><strong><%= link_to request.from, request.from %></strong></span></td>
+      <td class="text-right">
+        <%= link_to "Accept", accept_friend_request_path(request), :method => :post, :remote => true, class: "btn btn-sm btn-success" %>
+        <%= link_to "Decline", friend_request_path(request), :method => :delete, :remote => true, class: "btn btn-sm btn-danger" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
