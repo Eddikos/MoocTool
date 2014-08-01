@@ -1,0 +1,27 @@
+<% content_for :title do %>Registered users<% end %>
+
+<% hero_block "text-center" do %>
+  <h1>Registered users</h1>
+<% end %>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <table class="table">
+      <tr>
+        <th>Name</th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <h4><%= link_to user.full_name, user %></h4>
+            <div>
+              <ul class="list-inline text-muted" style="margin-left: 0;">
+                Member for <%= time_ago_in_words user.created_at %>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

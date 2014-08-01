@@ -1,0 +1,37 @@
+<% content_for :title do %><%= @user.full_name %><% end %>
+
+<% hero_block 'text-center' do %>
+<div class="search-hero">
+  <div class="container">
+    <a class="#" data-toggle="modal" data-target=".bs-example-modal-sm" style="cursor: pointer;">
+      <img class="img-circle" src="http://www.gravatar.com/avatar/<%= Digest::MD5.hexdigest(@user.email.downcase) %>?s=128&amp;d=mm">
+    </a>
+
+    <h1><%= @user.full_name %></h1>
+
+    <ul class="list-inline">
+      <li><span class="glyphicon glyphicon-calendar"></span> Member for <%= time_ago_in_words @user.created_at %></li>
+    </ul>
+  </div>
+</div>
+<% end %>
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Profile Image</h4>
+      </div>
+      <div class="modal-body" style="padding: 0;">
+        <img src="http://www.gravatar.com/avatar/<%= Digest::MD5.hexdigest(@user.email.downcase) %>?s=298&amp;d=mm">
+      </div>
+      <% if user_signed_in? and @user == current_user %>
+        <div class="modal-footer">
+          <p class="text-center">You can update your profile image at <a href="http://www.gravatar.com/">www.gravatar.com</a></p>
+        </div>
+      <% end %>
+    </div><!-- /.modal-content -->
+  </div>
+</div>
