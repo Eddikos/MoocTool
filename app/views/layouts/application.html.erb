@@ -54,7 +54,7 @@
   </div>
 
   <% flash.each do |type, message| %>
-    <div class="alert <%= bootstrap_class_for(type) %>">
+    <div class="alert <%= bootstrap_class_for(type) %>" style="margin-bottom: 0;">
       <div class="container">
         <%= message %>
       </div>
