@@ -1,8 +1,8 @@
-function init() {
+$(document).ready(function() {
     //setup the instance of sigma to handle the visualisation
     var searchTerm = 'flwebsci';
     $('#search-term').html(searchTerm);
-
+    setTimeout(function(){
     var sigInst = sigma.init($('#visualisation')[0]).drawingProperties({
         defaultLabelColor: '#fff',
         defaultLabelSize: 12,
@@ -206,10 +206,11 @@ function init() {
         }).draw(2, 2, 2);
     });
 });
-}
+}, 500);
+});
 
-if (document.addEventListener) {
-    document.addEventListener('DOMContentLoaded', init, false);
-} else {
-    window.onload = init;
-}
+//if (document.addEventListener) {
+//    document.addEventListener('DOMContentLoaded', init, false);
+//} else {
+//    $(document).ready(init);
+//}
