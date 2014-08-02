@@ -1,5 +1,6 @@
 class AuthenticationsController < ApplicationController
   before_filter :authenticate_user!, except: :create
+  skip_before_filter :verify_authenticity_token
 
   def index
     @authentications = current_user.authentications
@@ -23,11 +24,8 @@ class AuthenticationsController < ApplicationController
         sign_in_and_redirect(:user, existing.user)
       else
         full_name = auth["info"]["name"]
-        email = auth["info"]["email"]
 
-        if email.nil? or email.blank?
-          return redirect_to new_user_registration_path, alert: "We require your email address to register via Twitter.".html_safe
-        end
+        email = "#{auth["info"]["nickname"]}@on.twitter.com"
 
         if User.find_by email: email
           return redirect_to new_user_session_path, alert: "A user is already registered with this email address &ndash; try logging in.".html_safe
@@ -39,7 +37,6 @@ class AuthenticationsController < ApplicationController
 
         authentication = new_user.authentications.build(provider: auth['provider'], uid: auth['uid'])
         authentication.token = auth['credentials']['token']
-        new_user.confirm!
 
         sign_in_and_redirect(:user, new_user)
       end
