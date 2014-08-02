@@ -1,0 +1,70 @@
+<style media="screen" type="text/css">
+
+#hashtagVisualiser {
+	width:100%;
+	top: 0;
+	left: 0;
+}
+
+#visHelpContainer {
+	width:20%;
+	position:relative;
+	float:left;
+}
+
+.btn {
+	width:100%;
+	margin: 10px 0 10px 0;
+}
+
+#sigma-parent {
+	position:relative;
+	float:right;
+	border-radius:4px;
+	background:white;
+	height:100%;
+	width:80%;
+	margin-bottom:60px;
+}
+
+#visualisation {
+	position: absolute;
+	width: 100%;
+	height: 1000px;
+	top: 0;
+	left: 0;
+}
+</style>
+
+<div id="hashtagVisualiser"> <!--Everything is contained within this div-->
+	<div class="span12 buttons-container" id="visHelpContainer">	
+	  	<h3>Control Panel</h3> 
+		<button class="btn" id="stop-layout">Stop Layout Algorithm</button>
+    		<button class="btn" id="rescale-graph">Rescale or Reset Network</button>
+		<h3>Tips</h3>
+		This graph shows the different hashtags used in Tweets along with the chosen hashtag, and the people who used these tags.
+		<p>
+			<ul>
+				<li>Blue nodes (circles) represent hashtags</li>
+				<li>Pink nodes represent users</li>
+				<li>Click 'Stop Layout Algorithm' at any time to view the connections. The longer the algorithm runs, the tider the graph will be. </li>
+				<li>Hover over a hashtag node to highlight the connections relevant to it. This represents the users who have tweeted with that hashtag.</li>
+				<li>Hover over a user to highlight the hashtags they have used. </li>
+				<li>If performance decreases, stop the layout algorithm and rescale the network.</li>
+			</ul>
+		</p>
+		Created using <a href="http://sigmajs.org/">sigma.js</a> by <a href="http://twitter.com/cpheth">Chris Phethean</a> for the <a href="http://webobservatory.soton.ac.uk/">Southampton Web Observatory</a>.
+	</div>	
+	<div id="sigma-parent">
+		<!--Heading for the visualisation itself. This will appear directly over the top left corner of the visualisation canvas-->
+		<h2>Hashtag Use with: <span id="search-term"></span></h2>
+		<!--The visualisation div, in which it will be shown-->
+		<div id="visualisation"></div>
+			
+	</div>
+</div>
+
+<script src="http://waisvm-nh1g12.ecs.soton.ac.uk/assets/jquery.min.js"></script>
+<script src="http://waisvm-nh1g12.ecs.soton.ac.uk/assets/sigma.min.js"></script>
+<script src="http://waisvm-nh1g12.ecs.soton.ac.uk/assets/sigma.forceatlas2.js"></script>
+<script src="http://waisvm-nh1g12.ecs.soton.ac.uk/assets/hashtag_network.js"></script>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+
+  resources :hashtag_network
 
   resources :friendship
   resources :friend_requests do
