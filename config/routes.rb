@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
 
-  resources :hashtag_network
+
+  get 'hashtag_network' => 'hashtag_network#index'
 
   resources :friendship
   resources :friend_requests do

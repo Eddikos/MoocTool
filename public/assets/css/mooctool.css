@@ -32,11 +32,11 @@
 
 .box{
     border: solid rgba(0, 0, 0, 0.2) 1px;
-    background-color: white;
     border-radius: 2px;
     width: 150px;
     height: 150px;
     margin: auto;
+    padding: 4px;
 }
 
 .box:hover{
