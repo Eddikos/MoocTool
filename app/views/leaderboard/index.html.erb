@@ -1,2 +1,47 @@
-<h1>Leaderboard#index</h1>
-<p>Find me in app/views/leaderboard/index.html.erb</p>
+<h1>Leaderboard</h1>
+<div class="leaderboard">
+        <table class="table table-hover text-center table-striped" id="amigos">
+        	<tr>
+        	        <th>Number</th>
+        	        <th>Average</th>
+        	        <th>Total Steps Completed</th>
+        	        <th>First Visit</th>
+        	        <th>Last Visit</th>
+        	        <th>Days to complete</th>
+        	        <th>Total Correct</th>
+        	        <th>Number of Attempts</th>
+	                <th>Average Attempts per correct answer</th>
+                	<th>Progress through course</th>
+		</tr>
+            
+		<script>
+               $.getJSON("http://waisvm-nh1g12.ecs.soton.ac.uk/assets/data/leaderandquizresponse.json",
+                function(data){
+                    
+                    data.sort(function (obj1, obj2){
+                        return obj2.average - obj1.average;
+                    });
+                    
+                    var i = 1;
+                    $.each(data, function(index,user){
+                      var progress = parseFloat(Math.round(user.average_completed_per_week * 100) / 100).toFixed(2);
+                      var averageAttempts = parseFloat(Math.round(user.average_attempts_per_correct_answer * 100) / 100).toFixed(2);
+                      content = '<tr>' 
+                      content += '<td>' + i + '</td>';
+                      content += '<td>' + progress+ '</td>';
+                      content += '<td>' + user.total_steps_completed + '</td>';
+                      content += '<td>' + user.first_visit + '</td>';
+                      content += '<td>' + user.last_visit + '</td>';
+                      content += '<td>' + user.days_to_complete + '</td>';
+                      content += '<td>' + user.total_questions_answered_correctly + '</td>';
+                      content += '<td>' + user.number_of_attempts + '</td>';
+                      content += '<td>' + averageAttempts + '</td>';
+                      content += '<td class="progressBar"> <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + progress + '%;">' + progress + '%</div></div></td>';
+                      content += '</tr>';
+                      i++;
+                      $(content).appendTo("#amigos");
+                    });
+                });
+		</script>
+	</table>
+</div>
