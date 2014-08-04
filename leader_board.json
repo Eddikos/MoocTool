@@ -1,0 +1,73 @@
+[{
+    "userid": 2,
+    "average": 65,
+    "total_steps": 115,
+    "first_visit": "2013-11-12",
+    "last_visit": "2013-12-15",
+    "days_to_complete": 20,
+    "total_correct": 32,
+    "number_of_attempts": 45    
+}, {
+    "userid": 2,
+    "average":  78,
+    "total_steps": 115,
+    "first_visit": "2013-11-12",
+    "last_visit": "2013-12-15",
+    "days_to_complete": 20,
+    "total_correct": 32,
+    "number_of_attempts": 45  
+}, {
+    "userid": 2,
+    "average": 45,
+    "total_steps": 115,
+    "first_visit": "2013-11-12",
+    "last_visit": "2013-12-15",
+    "days_to_complete": 20,
+    "total_correct": 32,
+    "number_of_attempts": 45  
+},{
+    "userid": 2,
+    "average": 23,
+    "total_steps": 115,
+    "first_visit": "2013-11-12",
+    "last_visit": "2013-12-15",
+    "days_to_complete": 20,
+    "total_correct": 32,
+    "number_of_attempts": 45  
+},{
+    "userid": 2,
+    "average": 34,
+    "total_steps": 115,
+    "first_visit": "2013-11-12",
+    "last_visit": "2013-12-15",
+    "days_to_complete": 20,
+    "total_correct": 32,
+    "number_of_attempts": 45  
+},{
+    "userid": 2,
+    "average": 56,
+    "total_steps": 115,
+    "first_visit": "2013-11-12",
+    "last_visit": "2013-12-15",
+    "days_to_complete": 20,
+    "total_correct": 32,
+    "number_of_attempts": 45  
+},{
+    "userid": 2,
+    "average": 98,
+    "total_steps": 115,
+    "first_visit": "2013-11-12",
+    "last_visit": "2013-12-15",
+    "days_to_complete": 20,
+    "total_correct": 32,
+    "number_of_attempts": 45  
+},{
+    "userid": 2,
+    "average": 80,
+    "total_steps": 115,
+    "first_visit": "2013-11-12",
+    "last_visit": "2013-12-15",
+    "days_to_complete": 20,
+    "total_correct": 32,
+    "number_of_attempts": 45  
+}]

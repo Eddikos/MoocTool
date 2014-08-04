@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!php echo("<title>.$this->title."</title>"); ?>
+    <?php echo("<title>".$this->title."</title>"); ?>
 
 <!-- Start Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -35,9 +35,6 @@
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript">stLight.options({publisher: "4a18f991-9e2e-4e3b-86e5-e464b95375b8", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <!--End Social Button Script-->
-
-
-    
   </head>
   
   <body>

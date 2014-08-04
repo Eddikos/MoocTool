@@ -1,0 +1,101 @@
+[{
+    "user_id": "1473700d-d58a-44a6-b42a-bfbf00388f85",
+    "average_completed_per_week": 100,
+    "total_steps_completed": 115,
+    "first_visit": "2013-11-12 23:04:37 UTC",
+    "last_visit": "2013-12-15 20:43:56 UTC",
+    "days_to_complete": 32,
+    "total_questions_answered_correctly": 40,
+    "number_of_attempts": 135,
+    "average_attempts_per_correct_answer": 3.375
+}, {
+    "user_id": "b7ea8838-55b0-4352-9749-6aa161d36e10",
+    "average_completed_per_week": 98.71794872,
+    "total_steps_completed": 114,
+    "first_visit": "2013-11-11 19:21:38 UTC",
+    "last_visit": "2013-12-15 16:25:44 UTC",
+    "days_to_complete": 33,
+    "total_questions_answered_correctly": 42,
+    "number_of_attempts": 139,
+    "average_attempts_per_correct_answer": 3.30952381
+}, {
+    "user_id": "00b20d56-9835-48e1-80a1-0c7a750b6d49",
+    "average_completed_per_week": 90.45616421,
+    "total_steps_completed": 103,
+    "first_visit": "2013-10-28 10:21:05 UTC",
+    "last_visit": "2013-12-09 10:49:07 UTC",
+    "days_to_complete": 42,
+    "total_questions_answered_correctly": 29,
+    "number_of_attempts": 95,
+    "average_attempts_per_correct_answer": 3.275862069
+}, {
+    "user_id": "8678ad50-744e-49f4-8a76-d4136903cda8",
+    "average_completed_per_week": 86.50835276,
+    "total_steps_completed": 99,
+    "first_visit": "2013-11-11 09:34:40 UTC",
+    "last_visit": "2013-12-18 13:48:39 UTC",
+    "days_to_complete": 37,
+    "total_questions_answered_correctly": 43,
+    "number_of_attempts": 141,
+    "average_attempts_per_correct_answer": 3.279069767
+}, {
+    "user_id": "3ea20bf5-2974-4e79-83ac-5da422099e4f",
+    "average_completed_per_week": 85.01910127,
+    "total_steps_completed": 99,
+    "first_visit": "2013-11-17 23:37:55 UTC",
+    "last_visit": "2013-12-22 12:55:36 UTC",
+    "days_to_complete": 34,
+    "total_questions_answered_correctly": 43,
+    "number_of_attempts": 141,
+    "average_attempts_per_correct_answer": 3.279069767
+}, {
+    "user_id": "28a35996-3332-4fae-bf33-61991d236666",
+    "average_completed_per_week": 76.63267288,
+    "total_steps_completed": 89,
+    "first_visit": "2013-11-11 11:56:00 UTC",
+    "last_visit": "2013-11-25 11:59:07 UTC",
+    "days_to_complete": 14,
+    "total_questions_answered_correctly": 42,
+    "number_of_attempts": 138,
+    "average_attempts_per_correct_answer": 3.285714286
+}, {
+    "user_id": "fd5903f8-ce63-4e17-a6aa-425c8b43eaaa",
+    "average_completed_per_week": 65.6478244,
+    "total_steps_completed": 88,
+    "first_visit": "2013-11-11 19:57:52 UTC",
+    "last_visit": "2013-12-19 20:59:02 UTC",
+    "days_to_complete": 38,
+    "total_questions_answered_correctly": 37,
+    "number_of_attempts": 125,
+    "average_attempts_per_correct_answer": 3.378378378
+}, {
+    "user_id": "61e0accb-b389-4ba4-92cc-7211557c3d09",
+    "average_completed_per_week": 55.06118881,
+    "total_steps_completed": 86,
+    "first_visit": "2013-11-12 18:41:18 UTC",
+    "last_visit": "2013-11-25 19:45:16 UTC",
+    "days_to_complete": 13,
+    "total_questions_answered_correctly": 42,
+    "number_of_attempts": 140,
+    "average_attempts_per_correct_answer": 3.333333333
+}, {
+    "user_id": "61e0accb-b389-4ba4-92cc-7211557c3d09",
+    "average_completed_per_week": 35.06118881,
+    "total_steps_completed": 86,
+    "first_visit": "2013-11-12 18:41:18 UTC",
+    "last_visit": "2013-11-25 19:45:16 UTC",
+    "days_to_complete": 13,
+    "total_questions_answered_correctly": 42,
+    "number_of_attempts": 140,
+    "average_attempts_per_correct_answer": 3.333333333
+}, {
+    "user_id": "dfd870b8-6279-42b8-8f21-d908ac1a1919",
+    "average_completed_per_week": 15.30950531,
+    "total_steps_completed": 88,
+    "first_visit": "2013-11-11 10:53:26 UTC",
+    "last_visit": "2013-12-19 18:03:56 UTC",
+    "days_to_complete": 38,
+    "total_questions_answered_correctly": 39,
+    "number_of_attempts": 127,
+    "average_attempts_per_correct_answer": 3.256410256
+}]
