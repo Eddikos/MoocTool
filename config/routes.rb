@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'growth/index'
+
+  get 'leaderboard/index'
+
   get 'hashtag_network' => 'hashtag_network#index'
 
   resources :friendship
