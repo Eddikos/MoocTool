@@ -48,39 +48,41 @@ var map = new Datamap({
         }
 });
 
-$.getJSON("/assets/data/map.json", function(json) {
-    data = json; // this will show the info it in firebug console
-    for(i = 0;i < data.length; i++)
-    {
-        if (max < data[i].count) {
-            max = data[i].count;
-        }
-    }
+$(function(){
+  $.getJSON("/assets/data/map.json", function(json) {
+      data = json; // this will show the info it in firebug console
+      for(i = 0;i < data.length; i++)
+      {
+          if (max < data[i].count) {
+              max = data[i].count;
+          }
+      }
 
-    for(i = 0;i < data.length; i++)
-    {
-      ( function (index){
-        var num = data[i].count;
+      for(i = 0;i < data.length; i++)
+      {
+        ( function (index){
+          var num = data[i].count;
 
-        var ratio = (num - min) * 1.0 / (max - min);
+          var ratio = (num - min) * 1.0 / (max - min);
 
-        var R = Math.round(maxColor[0] * ratio + minColor[0] * (1 - ratio));
-        var G = Math.round(maxColor[1] * ratio + minColor[1] * (1 - ratio));
-        var B = Math.round(maxColor[2] * ratio + minColor[2] * (1 - ratio));
-        var color = 'rgb(' + R + ', ' + G + ', ' + B + ')';
+          var R = Math.round(maxColor[0] * ratio + minColor[0] * (1 - ratio));
+          var G = Math.round(maxColor[1] * ratio + minColor[1] * (1 - ratio));
+          var B = Math.round(maxColor[2] * ratio + minColor[2] * (1 - ratio));
+          var color = 'rgb(' + R + ', ' + G + ', ' + B + ')';
 
-        $('.' + mapping[data[i].country]).css('fill', color);
-        $('.' + mapping[data[i].country]).hover(
-                              function(){
-                                 $('#popupContainer').append( $( "<span>Country: <b>" + data[index].country + "</b><br/> Number of Tweets:  " + data[index].count +"<br/> <hr/><img <img class = 'imgProf' src='" + data[index].tweets[0].image_url + "'/> <b>" + data[index].tweets[0].username +":</b><br/> "+data[index].tweets[0].text + " <br/><hr/> <img class = 'imgProf' src='" + data[index].tweets[1].image_url + "'/><b> " + data[index].tweets[1].username +":</b><br/> "+data[index].tweets[1].text +"</span>" ) ).show();
-                              },
-                              function(){
-                                 $('#popupContainer').hide().find( "span:last" ).remove();
-                              });
-      })(i);
-    }
+          $('.' + mapping[data[i].country]).css('fill', color);
+          $('.' + mapping[data[i].country]).hover(
+                                function(){
+                                   $('#popupContainer').append( $( "<span>Country: <b>" + data[index].country + "</b><br/> Number of Tweets:  " + data[index].count +"<br/> <hr/><img <img class = 'imgProf' src='" + data[index].tweets[0].image_url + "'/> <b>" + data[index].tweets[0].username +":</b><br/> "+data[index].tweets[0].text + " <br/><hr/> <img class = 'imgProf' src='" + data[index].tweets[1].image_url + "'/><b> " + data[index].tweets[1].username +":</b><br/> "+data[index].tweets[1].text +"</span>" ) ).show();
+                                },
+                                function(){
+                                   $('#popupContainer').hide().find( "span:last" ).remove();
+                                });
+        })(i);
+      }
 
-    var svgElement = document.querySelector('#map-container > svg')
+      var svgElement = document.querySelector('#map-container > svg')
+  });
 });
 </script>
 <% end %>
