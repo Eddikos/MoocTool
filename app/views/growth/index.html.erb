@@ -4,7 +4,7 @@
 </canvas>
 <script src="/assets/js/charts.js"></script>
 <script>
-$.getJSON("http://waisvm-nh1g12.ecs.soton.ac.uk/assets/data/growth.json", function(data) {
+$.getJSON("/assets/data/growth.json", function(data) {
 	var d = new Date();
 	d.setDate(d.getDate() - 60);
 	var month = new Array();
