@@ -63,7 +63,9 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <!-- <li><a href="#">Growth</a></li>-->
-          <li><%= link_to "Leader Board", leaderboard_index_path %></li>
+	
+          <li><%= link_to "Growth", growth_index_path %></li>
+          <li><%= link_to "Leaderboard", leaderboard_index_path %></li>
           <li><%= link_to "Community Network", hashtag_network_path %></li>
           <li><%= link_to "Users", users_path %></li>
           <% if user_signed_in? %>

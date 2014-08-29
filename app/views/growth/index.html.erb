@@ -1,2 +1,57 @@
-<h1>Growth#index</h1>
-<p>Find me in app/views/growth/index.html.erb</p>
+<h1>Growth</h1>
+<p>Accummulative use of #fldigital over time</p>
+<canvas id="line-graph" width="1000" height="600">
+</canvas>
+<script src="/assets/js/charts.js"></script>
+<script>
+$.getJSON("http://waisvm-nh1g12.ecs.soton.ac.uk/assets/data/growth.json", function(data) {
+	var d = new Date();
+	d.setDate(d.getDate() - 60);
+	var month = new Array();
+	var months = ["", "", "", "", "", "", "", "", "", "", "", ""];
+
+	month[0] = "January";
+	month[1] = "February";
+	month[2] = "March";
+	month[3] = "April";
+	month[4] = "May";
+	month[5] = "June";
+	month[6] = "July";
+	month[7] = "August";
+	month[8] = "September";
+	month[9] = "October";
+	month[10] = "November";
+	month[11] = "December";
+	var curMonth = month[d.getMonth()];
+	
+	for(i = 0; i < 60; i++)
+	{
+		d.setDate(d.getDate() + 1);
+		if(i % 7 == 0)
+			months[i] = month[d.getMonth()] + " the " + d.getDate();
+		else
+			months[i] = "";
+	}
+
+	months.push("");
+	var data = {
+		labels: months,
+    		datasets: [
+       		{
+			label: "#fldigital",
+			fillColor: "rgba(160,160,270,0.2)",
+			strokeColor: "rgba(160,160,270,1)",
+			pointColor: "rgba(160,160,270,1)",
+			pointStrokeColor: "#fff",
+			pointHighlightFill: "#fff",
+			pointHighlightStroke: "rgba(160,160,270,1)",
+			data: data[0].data
+		}]
+	};
+	var ctx = document.getElementById("line-graph").getContext("2d");
+	var myLineChart = new Chart(ctx).Line(data, {
+		pointHitDetectionRadius : 5,
+		pointDotRadius : 3
+	});
+});
+</script>
