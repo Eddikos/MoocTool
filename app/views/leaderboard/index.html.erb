@@ -15,7 +15,7 @@
 		</tr>
             
 		<script>
-               $.getJSON("/assets/data/leaderandquizresponse.json",
+               $.getJSON(<%= "'".html_safe + asset_path("assets/data/leaderandquizresponse.json") + "'".html_safe %>,
                 function(data){
                     
                     data.sort(function (obj1, obj2){

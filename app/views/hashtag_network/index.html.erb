@@ -64,8 +64,8 @@
 	</div>
 </div>
 
-<script src="/assets/js/sigma.min.js"></script>
-<script src="/assets/js/sigma.forceatlas2.js"></script>
+<script src=<%= '"'.html_safe + asset_path("assets/js/sigma.min.js") + '"'.html_safe %>></script>
+<script src=<%= '"'.html_safe + asset_path("assets/js/sigma.forceatlas2.js") + '"'.html_safe %>></script>
 <!--<script src="/assets/js/hashtag_network.js"></script>-->
 
 <script>$(document).ready(function() {
@@ -93,7 +93,7 @@
 		***THIS IS THE CODE THAT HANDLES THE SOCIAL MEDIA DATA***
 		Get the list of hashtag arrays and converts to javascript array
 		*/
-    $.getJSON('/assets/data/flwebscihashtags.json', function(data) {
+    $.getJSON(<%= "'".html_safe + asset_path("assets/data/flwebscihashtags.json") + "'".html_safe %>, function(data) {
 
 	var hashtagsarray = data;
 	//for each hashtag array, extract the tag and the list of users who have posted it

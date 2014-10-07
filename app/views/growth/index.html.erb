@@ -2,9 +2,9 @@
 <p>Accummulative use of #fldigital over time</p>
 <canvas id="line-graph" width="1000" height="600">
 </canvas>
-<script src="/assets/js/charts.js"></script>
+<script src=<%= '"'.html_safe + asset_path("assets/js/charts.js") + '"'.html_safe %>></script>
 <script>
-$.getJSON("/assets/data/growth.json", function(data) {
+$.getJSON(<%= "'".html_safe + asset_path("assets/data/growth.json") + "'".html_safe %>, function(data) {
 	var d = new Date();
 	d.setDate(d.getDate() - 60);
 	var month = new Array();
